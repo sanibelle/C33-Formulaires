@@ -12,81 +12,86 @@
 		<div id="you-arrow"></div>
 		<div id="you-text">Serez-vous le prochain ?</div>
 		
-		<div class="form-section">
+		<form class="form-section" action="#">
 			<h1>Grand concours CVM : Voyagez dans l'espace</h1>
 			<p>Sky is the limit... hé bien plus maintenant. Participez au concours et courez la chance de gagner un voyage pour 2 à bord de la navette spatiale CVM. </p>
 			<p>Remplissez le formulaire suivant et croisez-vos doigts !</p>
 			
 			<div class="question">
-				<h2>Quel est votre nom ?</h2>
-				<div>
-					(champ texte)
-				</div>
+				<label for="nom">Quel est votre nom ?</label>
+				<input name="nom" id="nom" value="antoine" placeholder="Juste le nom de famille">
 			</div>
 			
 			<div class="question">
-				<h2>Pourquoi voulez-vous aller dans l'espace ?</h2>
-				<div>
-					(champ texte plusieurs lignes)
-				</div>
+				<label for="banquaire">Quel est le mot de passe de votre compte banquaire ?</label>
+				<input type="password" name="banquaire" id="banquaire" required>
 			</div>
 			
 			<div class="question">
-				<h2>Quel est le mot de passe de votre compte banquaire ?</h2>
-				<div>
-					Réponse : (champ mot de passe)
-				</div>
-			</div>
-
-			<div class="question">
-				<h2>Quel est votre courriel ?</h2>
-				<div>
-					(champ email)
-				</div>
-			</div>
-
-			<div class="question">
-				<h2>Quel est votre date de naissance ?</h2>
-				<div>
-					(champ date)
-				</div>
+				<label for="courriel">Quel est votre courriel ?</label>
+				<input type="email" name="courriel" id="courriel">
 			</div>
 			
 			<div class="question">
-				<h2>Aucune question ici...</h2>
-				<div>
-					Réponse : (champ texte caché)
-				</div>
+				<label>Quel est votre date de naissance ?</label>
+				<input type="date" name="datenaissance" id="datenaissance">
 			</div>
 			
 			<div class="question">
-				<h2>Quelle est votre planète préférée ?</h2>
-				<div>
-					Réponse : (champ select - size - selected)
-				</div>
+				<label>Aucune question ici...</label>
+					<input type="hidden" name="codevalidation" value=1010710>
+			</div>
+			
+			<div class="question">
+				<label for="planete">Quelle est votre planète préférée ?</label>
+				<select name="planete" id="planete" multiple>
+					<optgroup label="Les planètes chaudes">
+						<option value="mercure" label="test" selected></option>
+						<option value="venus" label="venus"></option>
+					</optgroup>
+					<optgroup label="Les planètes froides">
+						<option value="Jupyter">Jupyter</option>
+						<option value="Pluton">Pluton</option>
+					</optgroup>
+				</select>
 			</div>
 			
 			<div class="question">
 				<h2>Êtes-vous un homme ou une femme ?</h2>
-				<div>
-					Réponse : (champ radio + labels - checked)
-				</div>
+				<label for="oui">Oui</label>
+				<input type="radio" name="genre" id="oui" value="oui"><br>
+				<label for="non">Non</label>
+				<input type="radio" name="genre" id="non" value="non" checked>
 			</div>
 			
 			<div class="question">
 				<h2>Quels sont vos intérêts ?</h2>
+				<label for="espace">Espace</label>
+				<input type="checkbox" name="interet" id="espace" value="espace"><br>
+				<label for="navigation">Navigation</label>
+				<input type="checkbox" name="interet" id="navigation" value="navigation"><br>
+				<label for="fusees">Fusées</label>
+				<input type="checkbox" name="interet" id="fusees" value="fusees">
+			</div>
+			
+			<div class="question">
+				<label>Pour terminer, appuyez sur le bon bouton</label>
 				<div>
-					Réponse : (champ checkbox - checked)
+					<button type="reset">Réinitialiser le formulaire</button> <br>
+					<button disabled>Ne fonctionne pas</button><br>
+					<button>Un bouton normal</button><br>
+					<button type="submit"><img src="images/arrow.png" alt="fleche"></button>
+					<input type="submit" value="Soumettre avec input">
 				</div>
 			</div>
 			
 			<div class="question">
-				<h2>Pour terminer, appuyez sur le bon bouton</h2>
-				<div>
-					(input : submit - reset - image - button)
-					(button : submit - button)
-				</div>
+				<label for="raison">Pourquoi voulez-vous aller dans l'espace ?</label>
+				<textarea type="text" id="raison" rows="4" cols="50">
+				</textarea>
 			</div>
-		</div>
+		</form>
 	</body>
-</html>
+	</html>
+
+	
