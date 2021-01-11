@@ -1,92 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>Your Dream Trip</title>
-        <meta charset="utf-8" />
-		<link href="css/global.css" rel="stylesheet" />
-		<script src="js/jquery-1.9.1.min.js"></script>
-		<script src="js/javascript.js"></script>
-	</head>
-	<body>
-		<div id="you-circle"></div>
-		<div id="you-arrow"></div>
-		<div id="you-text">Serez-vous le prochain ?</div>
-		
-		<div class="form-section">
-			<h1>Grand concours CVM : Voyagez dans l'espace</h1>
-			<p>Sky is the limit... hé bien plus maintenant. Participez au concours et courez la chance de gagner un voyage pour 2 à bord de la navette spatiale CVM. </p>
-			<p>Remplissez le formulaire suivant et croisez-vos doigts !</p>
-			
+
+<head>
+	<title>Your Dream Trip</title>
+	<meta charset="utf-8" />
+	<link href="css/global.css" rel="stylesheet" />
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/javascript.js"></script>
+</head>
+
+<body>
+	<div id="you-circle"></div>
+	<div id="you-arrow"></div>
+	<div id="you-text">Serez-vous le prochain ?</div>
+
+	<div class="form-section">
+		<h1>Grand concours CVM : Voyagez dans l'espace</h1>
+		<p>Sky is the limit... hé bien plus maintenant. Participez au concours et courez la chance de gagner un voyage
+			pour 2 à bord de la navette spatiale CVM. </p>
+		<p>Remplissez le formulaire suivant et croisez-vos doigts !</p>
+
+		<form action="" name="fuse">
 			<div class="question">
-				<h2>Quel est votre nom ?</h2>
-				<div>
-					(champ texte)
-				</div>
+				<label for="nom">Quel est votre nom ?</label>
+				<input type="text" 
+					id="nom" 
+					name="nom" 
+					placeholder="je te propose ceci" 
+					value="salut"
+					disabled>
 			</div>
-			
+			<!-- --**placeholder**-- Le ptit texte en gris qui s'efface quand tu clic dessus
+				 --**value      **-- La vrai/éditable valeur dans le champ texte
+				 --**disabled   **-- Désactive le champ
+			 -->
+
 			<div class="question">
-				<h2>Pourquoi voulez-vous aller dans l'espace ?</h2>
+				<label for="question">Pourquoi voulez-vous aller dans l'espace ?</label>
 				<div>
-					(champ texte plusieurs lignes)
-				</div>
-			</div>
-			
-			<div class="question">
-				<h2>Quel est le mot de passe de votre compte banquaire ?</h2>
-				<div>
-					Réponse : (champ mot de passe)
+					<textarea name="question" id="question" cols="60" rows="10" placeholder="salut"></textarea>
 				</div>
 			</div>
 
 			<div class="question">
-				<h2>Quel est votre courriel ?</h2>
-				<div>
-					(champ email)
-				</div>
+				<label for="mdp-banque">Quel est le mot de passe de votre compte banquaire ?</label>
+				<input type="password" name="mdp-banque" id="mdp-banque">
 			</div>
 
 			<div class="question">
-				<h2>Quel est votre date de naissance ?</h2>
-				<div>
-					(champ date)
-				</div>
+				<label for="courriel">Quel est votre courriel ?</label>
+				<input type="email" name="courriel" id="courriel">
 			</div>
-			
+
 			<div class="question">
-				<h2>Aucune question ici...</h2>
-				<div>
-					Réponse : (champ texte caché)
-				</div>
+				<label for="date">Quel est votre date de naissance ?</label>
+				<input type="date" name="date" id="date">
 			</div>
-			
+
 			<div class="question">
-				<h2>Quelle est votre planète préférée ?</h2>
-				<div>
-					Réponse : (champ select - size - selected)
-				</div>
+				<label for="cache">Aucune question</label>
+				<input type="hidden" name="cache" id="cache" >
 			</div>
-			
+
+			<div class="question">
+				<label for="planete">Quelle est votre planète préférée ?</label>
+				<select name="planete" id="planete">
+					<option value="terre">terre</option>
+					<optgroup label="Froid">
+						<option value="pluton">pluton</option>
+						<option value="jupyter">jupiter</option>
+					</optgroup>
+					<optgroup label="Chaud">
+						<option value="mercury">mercure</option>
+						<option value="venus">venus</option>
+					</optgroup>
+				</select>
+			</div>
+
 			<div class="question">
 				<h2>Êtes-vous un homme ou une femme ?</h2>
-				<div>
-					Réponse : (champ radio + labels - checked)
-				</div>
+				<!-- c'est avec name qu'on regroupe les boutons radio -->
+				<label for="oui">oui?</label>
+				<input type="radio" name="sexe" id="oui">
+
+				<label for="non">NON?</label>
+				<input type="radio" name="sexe" id="non">
+
+				<label for="plus">et + encore</label>
+				<input type="radio" name="blabla" id="plus">
 			</div>
-			
+
 			<div class="question">
 				<h2>Quels sont vos intérêts ?</h2>
-				<div>
-					Réponse : (champ checkbox - checked)
-				</div>
+				<label for="espace">espace</label>
+				<input type="checkbox" name="interet" id="espace">
+
+				<label for="fusee">fusee</label>
+				<input type="checkbox" name="interet" id="fusee">
+
+				<label for="planetes">planetes</label>
+				<input type="checkbox" name="interet" id="planetes">
 			</div>
-			
+
 			<div class="question">
 				<h2>Pour terminer, appuyez sur le bon bouton</h2>
-				<div>
-					(input : submit - reset - image - button)
-					(button : submit - button)
-				</div>
+				<input type="submit" value="Envoyer">
+				<input type="image" src="images/arrow.png" alt="envoyer">
+				<button>Je suis un bouton et j'envoie</button>
 			</div>
-		</div>
-	</body>
+		</form>
+	</div>
+</body>
+
 </html>
